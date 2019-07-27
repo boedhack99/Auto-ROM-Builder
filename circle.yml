@@ -1,3 +1,5 @@
 version: 2
+jobs:
+    test:
     - chmod 775 Builder
     - ./Builder
