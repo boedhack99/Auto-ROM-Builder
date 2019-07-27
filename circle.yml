@@ -1,4 +1,5 @@
-test:
-  override:
+version: 2
+jobs:
+  build:
     - chmod 775 Builder
     - ./Builder
