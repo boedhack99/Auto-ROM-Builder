@@ -11,12 +11,14 @@ echo "export PATH=~/bin:$PATH" >> ~/.bashrc
 source ~/.bashrc
 # Prepair SOurce
 mkdir ~/android && cd ~/android
-repo init -u https://github.com/LineageOS/android.git -b lineage-16.0
-git clone https://github.com/TwoOreosOneCup/device -b pie device/xiaomi/lavender
-git clone https://github.com/TwoOreosOneCup/vendor -b pie vendor/xiaomi/lavender
-git clone https://github.com/TwoOreosOneCup/kernel -b pie kernel/xiaomi/lavender
-git clone https://github.com/LineageOS/android_packages_resources_devicesettings -b lineage-16.0 packages/resources/devicesettings
+repo init -u https://github.com/LineageOS/android.git -b lineage-18.1
+git clone https://github.com/boedhack99/dxm -b R device/xiaomi/mojito
+git clone https://github.com/boedhack/vendor_mojito -b R vendor/xiaomi/mojito
+git clone https://github.com/PixelExperience-Devices/kernel_xiaomi_mojito -b eleven kernel/xiaomi/mojito
+git clone https://github.com/LineageOS/android_hardware_qcom_bootctrl -b lineage-18.1-caf hardware/qcom-caf/bootctrl
 repo sync -c -j4 &> /dev/null
 cd ~/android
 . build/envsetup.sh
-brunch lavender
+lunch lineage_mojito-userdebug
+mka sepolicy
+#mka bacon
