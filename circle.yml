@@ -1,6 +1,0 @@
-version: 2
-jobs:
-test:
-  override:
-    - chmod 775 Builder
-    - ./Builde
